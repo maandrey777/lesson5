@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+
+    
+  Задача 12. Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з
+  чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других –
+  200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за
+  номером).
+
+  <script>
+    document.write(`3 вишні = 100 грн <br> 3 лимона = 200 грн <br> 3 клубники = 500 грн <br> 3 банана = 1000 грн <br>`)
+    // document.write(`<div style='display: flex;'>`)
+    document.write(`<div style='display: flex; margin-top: 40px; gap: 10px'>`)
+
+    const cherryPicture = (`<img src="../img/cherry.jpg" alt="">`)
+    const lemonPicture = (`<img src="../img/lemon.jpg" alt="">`)
+    const strawberryPicture = (`<img src="../img/strawberry.jpg" alt="">`)
+    const bananaPicture = (`<img src="../img/banana.jpg" alt="">`)
+
+    const win1 = 100
+    const win2 = 200
+    const win3 = 500
+    const win4 = 1000
+
+    const minRandomNum = 1, maxRandomNum = 4
+
+    let singleResult
+    let counterCase1 = 0
+    let counterCase2 = 0
+    let counterCase3 = 0
+    let counterCase4 = 0
+
+
+    // Обчислення результату
+    for (let i = 0; i < 3; i++) {
+      let randomNumber = minRandomNum + Math.floor(Math.random() * (maxRandomNum - minRandomNum + 1))  //рандомная картинка
+      switch (randomNumber) {
+        case 1: singleResult = cherryPicture
+          break;
+        case 2: singleResult = lemonPicture
+          break;
+        case 3: singleResult = strawberryPicture
+          break;
+        case 4: singleResult = bananaPicture
+          break;
+      }
+      if (singleResult === cherryPicture)
+        counterCase1++
+      if (singleResult === lemonPicture)
+        counterCase2++
+      if (singleResult === strawberryPicture)
+        counterCase3++
+      if (singleResult === bananaPicture)
+        counterCase4++
+      document.write(`${singleResult} <br>`)
+
+    }
+
+    // Виведення результату
+
+    if (counterCase1 === 3)
+      document.write(`<h2>Ви виграли ${win1} грн</h2>`)
+    if (counterCase2 === 3)
+      document.write(`<h2>Ви виграли ${win2} грн</h2>`)
+    if (counterCase3 === 3)
+      document.write(`<h2>Ви виграли ${win3} грн</h2>`)
+    if (counterCase4 === 3)
+      document.write(`<h2>Ви виграли ${win4} грн</h2>`)
+  </script>
+  </div>
+  </div>
+</body>
+</html>

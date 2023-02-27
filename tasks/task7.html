@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  Задача 7. Вивести на екран N абзаців (N вводиться користувачем) за зразком:
+  <script>
+   
+    
+    const zagolovok = parseInt(prompt('Введіть кількість заголовків'))
+    const abzach = parseInt(prompt('Введіть кількість абзаців'))
+
+    for (let j = 1; j <= zagolovok; j++) {
+      document.write(`<div> <h1>Заголовок ${j}</h1>`)
+      for (let i = 1; i <= abzach; i++) {
+        document.write(`
+					<p>Розділ ${j} Параграф ${i}</p>
+				`)
+      }
+      document.write(`</div> <hr>`)
+    }
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+14. Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих пір,
+поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно ввести).
+<script>
+
+    const price = 200
+    sumMoney = parseFloat(prompt(`Внесіть гроші 200`))
+
+    let difference
+    do {
+      difference = price - sumMoney
+      if (difference < 0) 
+      break
+      sumMoney = parseFloat(prompt(difference))
+    } while (difference > 0);
+
+    document.write(`<br>Ваша решта ${difference}`)
+</script>
+ </div>
+  </div>
+</body>
+</html>

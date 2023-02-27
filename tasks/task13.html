@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="container">
+
+  13. Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач
+  намагається потопити корабель.
+  <script>
+
+  const fieldSizeN = parseInt(prompt("Розмір по N"));
+  const fieldSizeM = parseInt(prompt("Розмір по M"));
+  const shotNumber = parseInt(prompt("Кількість пострілів"));Р
+
+  randomPositionN = 1 + Math.floor(Math.random() * (fieldSizeN - 1 + 1));
+  randomPositionM = 1 + Math.floor(Math.random() * (fieldSizeM - 1 + 1));
+
+  let nShot, mShot;
+
+  for (let i = 0; i < shotNumber && i < fieldSizeN * fieldSizeM; i++) {
+    nShot = parseInt(prompt(`Your ${i + 1} N-shot`));
+    mShot = parseInt(prompt(`Your ${i + 1} M-shot`));
+    if (nShot == randomPositionN && mShot == randomPositionM) {
+      alert("Ви влучили");
+      break;
+    } else alert("Спробуйте ще");
+  }
+
+  </script>
+  </div>
+</div>
+</body>
+</html>
